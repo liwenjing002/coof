@@ -1,0 +1,16 @@
+zh: 
+  name: "用户名"
+  password: "密码"
+  email: "邮箱"
+  activerecord:
+    errors:
+      models: 
+        user:
+          attributes:
+            email:
+              blank: "邮箱不为空！"
+            password:
+              blank: "密码不为空！"
+            password_confirmation:
+              confirmation: "两次输入的密码不一致！"
+

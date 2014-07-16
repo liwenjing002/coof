@@ -1,0 +1,62 @@
+
+  <body >
+    <div id="wrap">
+            <div class="header-wrap">  
+        <div class="container header-wrap-inner">
+            <div id="header">
+              <div class="headline pull-left">一起出发吧～</div>
+              <a class="dark-brand pull-right" href="../"><h1>Themeclue</h1></a>
+            </div><!-- header -->
+        </div><!-- header-wrap-inner -->
+      </div><!-- header-wrap -->           
+      <div class="container">         
+          <div id="main" class="dark-block fix280">
+            <h1>登陆</h1>
+              <div class="alert alert-error" id="alert-error" style="display:none;">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h3></h3>
+        <p></p>
+              </div> 
+              <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+             
+                  <fieldset>
+                                    <%= f.label :email %>
+      <%= f.email_field :email, :autofocus => true, class: 'form-control fix280' %>
+
+                  </fieldset>                   
+                  <fieldset>
+                   
+      <%= f.label :password %>
+       <%- if devise_mapping.recoverable? %>
+        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
+      <% end -%>
+      <%= f.password_field :password, class: 'form-fix280' %>
+
+                  </fieldset>
+            
+                   <%= f.submit 'Sign in', :class => 'button btn btn-yellow higher fix280' %>
+ <% if devise_mapping.rememberable? -%>
+        <div class="checkbox">
+          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+  <% end %>
+                  <div class="text-line">Not a member? <a href="signup">Sign up now!</a></div>                                   
+                </form>
+                  <h1>OR</h1>
+                  <a href="https://api.twitter.com/oauth/authenticate?oauth_token=cYnBudoxzlsa0YTjXPd2CYp1U6lPqFNifwPnMfAHIk" class="btn btn-primary higher twitter fix280">SIGN IN WITH TWITTER</a>                  <div class="text-line"><em>One-click sign in to Themeclue if your account is connected to Twitter.</em></div>                            
+          </div><!-- main -->
+      </div><!-- container -->
+      <div id="push"></div> 
+    </div><!-- wrap -->
+
+    
+
+    
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Devise" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   
+  </head>
+  <body class="dark">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+        <footer id="footer">
+      <div id="top-footer-steps">      
+        <div class="container">
+          <div class="slogan">
+            <div class="pipe pull-left"></div>            
+            <strong>go2网</strong> 一个好玩的网站.<br>寻找无聊的人，一起不无聊.
+          </div>  
+        </div><!-- container -->
+      </div><!-- bottom-page -->
+      <div id="bottom-footer" class="container">              
+        <div class="pull-left">
+          <p><strong><a href="../"><span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<span itemprop="name">go2.com</span></span></a></strong> Copyright &copy; 2013. All themes &copy; their respective owners</p>
+        </div>
+        <div class="pull-right">
+          <p>已经注册了? <%= link_to '登陆', new_user_session_path %></p>
+        </div>
+      </div><!-- bottom-footer -->              
+    </footer>
+  </body>
+</html>

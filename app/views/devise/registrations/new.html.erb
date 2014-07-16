@@ -1,0 +1,53 @@
+<% content_for :title do %>  
+  注册
+<% end %> 
+
+    <div id="wrap">
+ <div class="header-wrap">  
+        <div class="container header-wrap-inner">
+            <div id="header">
+              <div class="headline pull-left">一起出发吧～</div>
+              <a class="dark-brand pull-right" href="../"><h1>Themeclue</h1></a>
+            </div>
+        </div>
+      </div>     
+      <div class="container">   
+            <div id="main" class="dark-block fix280">  
+              <h1>注册</h1> 
+                      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+
+                      
+ <fieldset>
+                       <%= f.label :name,'用户名' %>
+      <%= f.text_field :name, :type=>'text',:autofocus => true, class: 'form-control' %>
+    <%= devise_error_messages_new 'name' %>
+  </fieeldset> 
+                    <fieldset>
+
+      <%= f.label :email,'邮箱' %>
+      <%= f.email_field :email,:type=>'text', :autofocus => true, class: 'form-fix280' %>
+
+                    <%= devise_error_messages_new 'email' %>
+                    </fieldset> 
+                    <fieldset>
+                       <%= f.label :password,'密码' %>
+          <%= f.password_field :password, class: 'form-control' %>
+                  <%= devise_error_messages_new 'password' %>
+                    </fieldset>
+                        <fieldset>
+                       <%= f.label :password_confirmation,'密码确认' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+                    <%= devise_error_messages_new 'password_confirmation' %>
+                    </fieldset>
+                    <button type="submit" class="btn btn-yellow higher fix280">注册</button> 
+                    <div class="text-line">已经注册? <%= link_to '去登陆', new_user_session_path %></div>                                   
+                <% end %>
+            </div
+      </div>
+      <div id="push"></div> 
+    </div>
+
+    
+    
+
+    
